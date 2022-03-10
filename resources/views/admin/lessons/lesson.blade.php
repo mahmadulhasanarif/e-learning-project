@@ -5,9 +5,9 @@
 <div class="container">
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Category Page</h1>
-    <a href="{{url('category/create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-            class="fas fa-plus fa-sm text-white-50"></i> Add Category</a>
+    <h1 class="h3 mb-0 text-gray-800">lesson Page</h1>
+    <a href="{{url('lesson/create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-plus fa-sm text-white-50"></i> Add Lesson</a>
 </div>
 
 
@@ -15,7 +15,7 @@
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Category Table</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Lesson Table</h6>
             
             
             <form style="float: right"
@@ -52,23 +52,21 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        {{-- {{$i=1}}
-                        @foreach ($categories as $category)
+                        {{$i=1}}
+                        @foreach ($lessons as $lesson)
                         
                         <tr>
                             <td>{{$i++}}</td>
-                            <td>{{$category->name}}</td>
-                            <td>{{$category->created_at}}</td>
+                            <td>{{$lesson ->title}}</td>
+                            <td>{{$lesson->created_at}}</td>
                             <td>
-                                <form action="{{url('/category/'.$category->id)}}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <button class="btn btn-outline-danger">Delete</button>
-                                </form>
+                                
+                                    <a class="btn btn-primary" href="{{url('/lesson/'. $lesson->id)}}">show</a>
+                                
                             </td>
                         </tr>
                         @endforeach
-                         --}}
+                        
                     </tbody>
                 </table>
             </div>

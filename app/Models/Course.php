@@ -13,8 +13,8 @@ class Course extends Model
     
     protected $guarded = ['id'];
     
-    public function Category()
+    public function lesson()
     {
-       return $this->belongsTo(Category::class);
+       return $this->hasMany(Category::class);
     }
 }

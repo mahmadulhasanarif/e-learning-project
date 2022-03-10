@@ -74,7 +74,7 @@
            
 
             <li class="nav-item active">
-                <a class="nav-link" href="{{url('/admin')}}">
+                <a class="nav-link" href="{{url('/lesson')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Lesson</span></a>
             </li>

@@ -34,8 +34,10 @@ Route::middleware('auth')->group(function(){
     Route::resource('/category', CategoryController::class)->except(['show', 'edit', 'update']);
 
     Route::resource('/course', CourseController::class);
+    
+    Route::resource('/lesson', LessonController::class);
 });
 
 
 
-// Route::resource('/lesson', LessonController::class);
+

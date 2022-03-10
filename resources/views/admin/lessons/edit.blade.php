@@ -7,8 +7,11 @@
             <h2><strong>Course Page</strong></h2>
         </div>
         <div class="col-md-7">
-            <form action="{{url('lesson')}}" method="POST" enctype="multipart/form-data">
-                @csrf
+            <form action="{{url('lesson/'. $lesson->id)}}" method="POST" enctype="multipart/form-data">
+                
+                @csrf 
+                @method('PUT')
+                
                 <div style="float: right">
                     @error('name')
                     <small style="color: red">{{ $message }}</small>
@@ -16,12 +19,12 @@
                    </div>
                 <div class="mb">
                   <label>Lesson Title</label>
-                  <input type="text" id="title" class="form-control @error ('title') is-invalid @enderror" value="{{old('title')}}" name="title" aria-describedby="Name">
+                  <input type="text" id="title" class="form-control @error ('title') is-invalid @enderror" value="{{old('title', $lesson->title)}}" name="title" aria-describedby="Name">
                 </div>
                 
                 <div class="mb">
                     <label>Video URL</label>
-                    <input type="text" id="title" class="form-control @error ('video_url') is-invalid @enderror" value="{{old('video_url')}}" name="video_url" aria-describedby="Name">
+                    <input type="text" id="title" class="form-control @error ('video_url') is-invalid @enderror" value="{{old('video_url',$lesson->video_url)}}" name="video_url" aria-describedby="Name">
                 </div>
                 
                 <label>Course Name</label>
@@ -29,7 +32,7 @@
                             <option value="">select Course</option>
                             @foreach ($courses as $course)
 
-                           <option value="{{$course->id}}" @if ($course->id = old('course_id' )) selected
+                           <option value="{{$course->id}}" @if ($course->id = old('course_id', $lesson->course_id))selected
                                
                            @endif>{{$course->title}}</option>
                                                        
@@ -39,7 +42,8 @@
                 
                 <div class="mb">
                     <label>Description</label>
-                    <textarea type="text" name="description" id="email" class="form-control @error ('description') is-invalid @enderror" > </textarea>
+                    <textarea type="text" name="description" id="email" class="form-control @error ('description') is-invalid @enderror" > 
+                        {{old('description', $lesson->description)}} </textarea>
  
                 </div>
                 
