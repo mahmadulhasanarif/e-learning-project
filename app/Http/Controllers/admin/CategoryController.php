@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -33,7 +34,7 @@ class CategoryController extends Controller
         
         Session::flash('message', 'Category Added Successfully');
             
-        return redirect()->to('/category');
+        return redirect()->to('admin/category');
     }
 
     public function destroy(Category $category)
@@ -42,6 +43,6 @@ class CategoryController extends Controller
         
         Session::flash('message', 'Category Deleted Successfully');
         
-        return redirect()->to('/category');
+        return redirect()->to('admin/category');
     }
 }

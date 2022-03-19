@@ -9,4 +9,9 @@ class Category extends Model
 {
     protected $guarded = ['id'];
     use HasFactory;
+    
+    public function FunctionName()
+    {
+        # code...
+    }
 }

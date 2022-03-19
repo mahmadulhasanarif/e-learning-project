@@ -6,13 +6,20 @@
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">lesson Page</h1>
-    <a href="{{url('lesson/create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+    <a href="{{url('admin/lesson/create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
             class="fas fa-plus fa-sm text-white-50"></i> Add Lesson</a>
 </div>
 
 
 
 <div class="container">
+    
+    @if (session('message'))
+            <div class="alert alert-success" role="alert">
+                {{session('message')}}
+            </div>
+        @endif
+    
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Lesson Table</h6>
@@ -39,6 +46,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Category</th>
+                            <th>Video URL</th>
                             <th> Created Date</th>
                             <th>Action</th>
                         </tr>
@@ -47,6 +55,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Category</th>
+                            <th>Video URL</th>
                             <th>Created Date</th>
                             <th>Action</th>
                         </tr>
@@ -58,10 +67,11 @@
                         <tr>
                             <td>{{$i++}}</td>
                             <td>{{$lesson ->title}}</td>
+                            <td>{{$lesson ->video_url}}</td>
                             <td>{{$lesson->created_at}}</td>
                             <td>
                                 
-                                    <a class="btn btn-primary" href="{{url('/lesson/'. $lesson->id)}}">show</a>
+                                    <a class="btn btn-primary" href="{{url('admin/lesson/'. $lesson->id)}}">show</a>
                                 
                             </td>
                         </tr>

@@ -7,7 +7,7 @@
             <h2><strong>Category Page</strong></h2>
         </div>
         <div class="col-md-7">
-            <form action="/category" method="POST">
+            <form action="{{url('admin/category')}}" method="POST">
                 @csrf
                 <div style="float: right">
                     @error('name')

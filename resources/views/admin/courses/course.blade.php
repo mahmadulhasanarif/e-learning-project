@@ -12,7 +12,7 @@
     
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Course Page</h1>
-    <a href="{{url('course/create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+    <a href="{{url('admin/course/create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
             class="fas fa-plus fa-sm text-white-50"></i> Add Course</a>
 </div>
 
@@ -66,12 +66,8 @@
                             <td>{{$course->title}}</td>
                             <td>{{$course->created_at}}</td>
                             <td>
-                                <form action="{{url('/course/'.$course->id)}}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <button class="btn btn-outline-danger">Delete</button>
-                                    <a class="btn btn-outline-success" href="{{url('/course/'.$course->id .'/edit')}}">Edit</a>
-                                    <a class="btn btn-outline-info" href="{{url('/course/'.$course->id)}}">View</a>
+                                <form >
+                                    <a class="btn btn-outline-info" href="{{url('admin/course/'.$course->id)}}">View</a>
                                 </form>
                                 
                             </td>

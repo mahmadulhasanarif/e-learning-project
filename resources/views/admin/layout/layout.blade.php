@@ -52,7 +52,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="{{url('/category')}}">
+                <a class="nav-link" href="{{url('admin/category')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Catagories</span></a>
             </li>
@@ -61,7 +61,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="{{url('/course')}}">
+                <a class="nav-link" href="{{url('admin/course')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Course</span></a>
             </li>
@@ -74,7 +74,7 @@
            
 
             <li class="nav-item active">
-                <a class="nav-link" href="{{url('/lesson')}}">
+                <a class="nav-link" href="{{url('admin/lesson')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Lesson</span></a>
             </li>

@@ -1,0 +1,22 @@
+/* Home Page Css */
+
+.home-content{
+    padding: 30px 0px;
+    margin: 50x 0px;
+}
+
+.course{
+   margin: 15px 0; 
+}
+
+.page-header{
+    padding: 30px 0;
+    text-align: center;
+    background-color: rgba(54, 52, 223, 0.897);
+}
+
+.footer{
+    padding: 40px 0px;
+    text-align: center;
+    background-color: rgb(199, 221, 221);
+}

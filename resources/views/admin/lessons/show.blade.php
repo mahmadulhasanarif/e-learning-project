@@ -3,8 +3,14 @@
 @section('content')
 <div class="container">
 
+    @if (session('message'))
+            <div class="alert alert-success" role="alert">
+                {{session('message')}}
+            </div>
+        @endif
+    
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Course Page</h1></div>
+        <h1 class="h3 mb-0 text-gray-800">Lesson Page</h1></div>
 <div class="card-body">
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="2">
@@ -34,11 +40,11 @@
 
         </table>
 
-        <form action="{{url('/lesson/'.$lessons->id)}}" method="POST">
+        <form action="{{url('admin/lesson/'.$lessons->id)}}" method="POST">
             @csrf
             @method('delete')
             <button class="btn btn-outline-danger">Delete</button>
-            <a class="btn btn-warning" href="{{url('lesson/'.$lessons->id.'/edit')}}">Edit</a>
+            <a class="btn btn-warning" href="{{url('admin/lesson/'.$lessons->id.'/edit')}}">Edit</a>
         </form>
     </div>
 </div>

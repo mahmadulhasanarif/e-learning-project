@@ -7,7 +7,7 @@
             <h2><strong>Course Page</strong></h2>
         </div>
         <div class="col-md-7">
-            <form action="/course" method="POST" enctype="multipart/form-data">
+            <form action="{{url('admin/course')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div style="float: right">
                     @error('name')
@@ -35,7 +35,7 @@
                 
                 <div class="mb">
                     <label>Description</label>
-                    <textarea type="text" name="description" id="email" class="form-control @error ('description') is-invalid @enderror" > </textarea>
+                    <textarea type="text" rows="5" name="description" id="email" class="form-control @error ('description') is-invalid @enderror" > </textarea>
  
                     </div>
                   

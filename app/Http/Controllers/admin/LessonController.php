@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\Lesson;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class LessonController extends Controller
 {
@@ -41,8 +43,8 @@ class LessonController extends Controller
     {
         $this->data = $request->all();
         Lesson::create($this->data);
-        
-        return redirect()->to('/lesson');
+        Session::flash('message', 'Data Added Successfully');
+        return redirect()->to('admin/lesson');
     }
 
     /**
@@ -86,8 +88,8 @@ class LessonController extends Controller
         $lesson->description = $data['description'];
         $lesson->course_id = $data['course_id'];
         $lesson->save();
-        
-        return redirect()->to('/lesson');
+        Session::flash('message', 'Data Updated Successfully');
+        return redirect()->to('admin/lesson/'.$lesson->id);
     }
 
     /**
@@ -99,7 +101,7 @@ class LessonController extends Controller
     public function destroy(Lesson $lesson)
     {
         $lesson->delete();
-        
-        return redirect()->to('/lesson');
+        Session::flash('message', 'Data Deleted Successfully');
+        return redirect()->to('admin/lesson');
     }
 }

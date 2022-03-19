@@ -7,7 +7,7 @@
             <h2><strong>Course Page</strong></h2>
         </div>
         <div class="col-md-7">
-            <form action="{{url('/course/'.$course->id)}}" method="POST" enctype="multipart/form-data">
+            <form action="{{url('admin/course/'.$course->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div style="float: right">

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Course;
 use Illuminate\Http\Request;
@@ -52,7 +53,7 @@ class CourseController extends Controller
         
         Session::flash('message', 'Data Added Successfully');
         
-        return redirect()->to('/course');
+        return redirect()->to('admin/course');
     }
 
     /**
@@ -118,7 +119,7 @@ class CourseController extends Controller
         
         
         
-        return redirect()->to('/course');
+        return redirect()->to('admin/course/'.$course->id);
     }
 
     /**
@@ -135,6 +136,6 @@ class CourseController extends Controller
             Storage::delete($course->photo);
         }
         
-        return redirect()->to('/course');
+        return redirect()->to('admin/course');
     }
 }

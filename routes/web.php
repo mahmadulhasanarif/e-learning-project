@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CourseController;
-use App\Http\Controllers\LessonController;
+use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\CourseController;
+use App\Http\Controllers\admin\LessonController;
+use App\Http\Controllers\frontend\Courses;
+use App\Http\Controllers\frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,12 +20,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/course', [Courses::class, 'index']);
 
-Route::get('login', [AuthController::class, 'login_form'])->name('login');
-Route::post('login', [AuthController::class, 'login'])->name('login');
+Route::get('login', [AuthController::class, 'login_form']);
+Route::post('login', [AuthController::class, 'login']);
 Route::get('logout', [AuthController::class, 'logout']);
 
 
@@ -31,11 +32,11 @@ Route::middleware('auth')->group(function(){
     
     Route::get('/admin', [AdminController::class, 'index']);
 
-    Route::resource('/category', CategoryController::class)->except(['show', 'edit', 'update']);
+    Route::resource('admin/category', CategoryController::class)->except(['show', 'edit', 'update']);
 
-    Route::resource('/course', CourseController::class);
+    Route::resource('admin/course', CourseController::class);
     
-    Route::resource('/lesson', LessonController::class);
+    Route::resource('admin/lesson', LessonController::class);
 });
 
 

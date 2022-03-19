@@ -4,10 +4,10 @@
 <div style="border: 2px solid rgb(7, 238, 38)" class="container ">
     <div class="row clearfix">
         <div class="col-md-3">
-            <h2><strong>Course Page</strong></h2>
+            <h2><strong>Lesson Page</strong></h2>
         </div>
         <div class="col-md-7">
-            <form action="{{url('lesson/'. $lesson->id)}}" method="POST" enctype="multipart/form-data">
+            <form action="{{url('admin/lesson/'. $lesson->id)}}" method="POST" enctype="multipart/form-data">
                 
                 @csrf 
                 @method('PUT')
@@ -42,7 +42,7 @@
                 
                 <div class="mb">
                     <label>Description</label>
-                    <textarea type="text" name="description" id="email" class="form-control @error ('description') is-invalid @enderror" > 
+                    <textarea type="text" rows="5" name="description" id="email" class="form-control @error ('description') is-invalid @enderror" > 
                         {{old('description', $lesson->description)}} </textarea>
  
                 </div>
