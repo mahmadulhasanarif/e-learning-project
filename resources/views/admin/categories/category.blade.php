@@ -61,11 +61,11 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        {{$i=1}}
+                        
                         @foreach ($categories as $category)
                         
                         <tr>
-                            <td>{{$i++}}</td>
+                            <td>{{$loop->iteration}}</td>
                             <td>{{$category->name}}</td>
                             <td>{{$category->created_at}}</td>
                             <td>

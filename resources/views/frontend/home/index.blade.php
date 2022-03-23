@@ -4,14 +4,14 @@
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://imgscf.slidemembers.com/docs/1/1/306/winter_trip_powerpoint_layout_305867.jpg" class="d-block w-100" alt="...">
+        <img src="https://img.wallpapersafari.com/desktop/1920/1080/93/78/S49v0H.jpg" class="d-block w-100" alt="...">
             <div style="color:aqua" class="carousel-caption d-none d-md-block">
                 <h5>WelCome to eLarning </h5>
                 <p>Some representative placeholder content for the first slide.</p>
             </div>
       </div>
       <div class="carousel-item">
-        <img src="https://imgscf.slidemembers.com/docs/1/1/292/landscape_best_powerpoint_presentations_291534.jpg" class="d-block w-100" alt="...">
+        <img src="https://img.wallpapersafari.com/desktop/1024/576/50/77/GRKhYr.jpg" class="d-block w-100" alt="...">
         <div style="color:aqua" class="carousel-caption d-none d-md-block">
             <h5>WelCome to eLarning </h5>
             <p>Some representative placeholder content for the first slide.</p>

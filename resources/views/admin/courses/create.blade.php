@@ -25,7 +25,7 @@
                             <option value="selected disable">select category</option>
                             
                             @foreach ($categories as $Category)
-                                <option value=" {{$Category->id}} ">{{$Category->name}}</option>
+                                <option value=" {{$Category->id}}" @if ($Category->id == old('category_id')) selected @endif>{{$Category->name}}</option>
                             @endforeach
                             
                         </select>

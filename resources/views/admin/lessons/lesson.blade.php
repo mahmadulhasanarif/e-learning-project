@@ -5,7 +5,7 @@
 <div class="container">
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">lesson Page</h1>
+    <h1 class="h3 mb-0 text-gray-800">Lesson Page</h1>
     <a href="{{url('admin/lesson/create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
             class="fas fa-plus fa-sm text-white-50"></i> Add Lesson</a>
 </div>
@@ -61,11 +61,10 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        {{$i=1}}
                         @foreach ($lessons as $lesson)
                         
                         <tr>
-                            <td>{{$i++}}</td>
+                            <td>{{$loop->iteration}}</td>
                             <td>{{$lesson ->title}}</td>
                             <td>{{$lesson ->video_url}}</td>
                             <td>{{$lesson->created_at}}</td>

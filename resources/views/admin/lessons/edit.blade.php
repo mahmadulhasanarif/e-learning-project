@@ -24,7 +24,7 @@
                 
                 <div class="mb">
                     <label>Video URL</label>
-                    <input type="text" id="title" class="form-control @error ('video_url') is-invalid @enderror" value="{{old('video_url',$lesson->video_url)}}" name="video_url" aria-describedby="Name">
+                    <input type="text" id="video url" class="form-control @error ('video_url') is-invalid @enderror" value="{{old('video_url',$lesson->video_url)}}" name="video_url" aria-describedby="Name">
                 </div>
                 
                 <label>Course Name</label>
@@ -32,9 +32,9 @@
                             <option value="">select Course</option>
                             @foreach ($courses as $course)
 
-                           <option value="{{$course->id}}" @if ($course->id = old('course_id', $lesson->course_id))selected
+                           <option value="{{$course->id}}" selected @if ($course->id = old('course_id', $lesson->course_id))
                                
-                           @endif>{{$course->title}}</option>
+                           @endif> {{$course->title}}</option>
                                                        
                            @endforeach
                            

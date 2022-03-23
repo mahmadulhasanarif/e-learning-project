@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container">
+    
+
 
     @if (session('message'))
             <div class="alert alert-success" role="alert">
@@ -10,7 +12,12 @@
         @endif
     
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Lesson Page</h1></div>
+        <h1 class="h3 mb-0 text-gray-800">Lesson Page</h1>
+        <a style="float: right;" class="btn btn-outline-success" href="{{ url('admin/lesson') }}">Back To Lesson</a>
+    </div>
+
+            
+
 <div class="card-body">
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="2">
@@ -27,7 +34,7 @@
             
             <tr>
                 <th>Course:</th>
-                <td>{{$lessons->title}}</td>
+                <td>{{$lessons->course->title}}</td>
             </tr>
             
             <tr>

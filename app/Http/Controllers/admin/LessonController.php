@@ -56,7 +56,7 @@ class LessonController extends Controller
     public function show(Lesson $lesson)
     {
         $this->data['lessons'] = $lesson;
-        $this->data['courses'] = Course::all();
+        $this->data['courses'] = $lesson->course();
         return view('admin.lessons.show', $this->data);
     }
 

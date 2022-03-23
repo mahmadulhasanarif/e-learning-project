@@ -5,8 +5,10 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\CourseController;
 use App\Http\Controllers\admin\LessonController;
-use App\Http\Controllers\frontend\Courses;
+use App\Http\Controllers\frontend\CourseController as FrontendCourseController;
 use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\frontend\LessonController as FrontendLessonController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,10 +23,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/course', [Courses::class, 'index']);
+Route::get('/course', [FrontendCourseController::class, 'index']);
+Route::get('/course/{course}', [FrontendCourseController::class, 'show'])->name('course.details');
+Route::get('/lesson/{lesson}' , [FrontendLessonController::class, 'show'])->name('lesson.details');
 
-Route::get('login', [AuthController::class, 'login_form']);
-Route::post('login', [AuthController::class, 'login']);
 Route::get('logout', [AuthController::class, 'logout']);
 
 
@@ -42,3 +44,7 @@ Route::middleware('auth')->group(function(){
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

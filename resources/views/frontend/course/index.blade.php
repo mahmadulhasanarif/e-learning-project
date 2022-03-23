@@ -15,12 +15,12 @@
             <div class="row">
                 @foreach ($courses as $course)
                 <div class="col-md-4">
-                    <div class="card" style="width: 24rem;">
+                    <div class="card mb-4" style="width: 24rem;">
                         <img src="{{Storage::url($course->photo)}}" height="200px" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">{{$course->title}}</h5>
                           <p class="card-text"><span class="badge bg-success">{{$course->category->name}}</span></p>
-                          <a href="#" class="btn btn-primary">Course Details</a>
+                          <a href="{{ Route('course.details', ['course'=>$course->id]) }}" class="btn btn-primary">Course Details</a>
                         </div>
                     </div>
                 </div>
